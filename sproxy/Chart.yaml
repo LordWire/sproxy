@@ -1,0 +1,7 @@
+apiVersion: v2
+name: sproxy
+description: a simple http proxy application written in golang
+type: application
+
+version: 0.1.0
+appVersion: "1.0"

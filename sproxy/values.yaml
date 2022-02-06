@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  repository: lordwire/sproxy
+  pullPolicy: Always
+
+autoscaling:
+  enabled: false
+imagePullSecrets: []
+  # nameOverride: "simple-prroxy-app"
+  # fullnameOverride: "simple-proxy-chart"
+
+# overriding a 
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "sproxy-account"
+
+
+
+securityContext: 
+   capabilities:
+     drop:
+     - ALL
+   readOnlyRootFilesystem: true
+   runAsNonRoot: true
+   runAsUser: 1000
+
+service:
+  type: NodePort
+  port: 8080
+
+ingress:
+  enabled: false
+
+resources: {}

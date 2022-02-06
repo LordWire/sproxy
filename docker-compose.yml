@@ -1,0 +1,19 @@
+services:
+  sproxy:
+    image: lordwire/sproxy:1.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - source: ./config.yml
+        target: /app/config.yml
+        type: bind
+  backend1:
+    image: kennethreitz/httpbin
+  backend2:
+    image: kennethreitz/httpbin
+  backend3:
+    image: kennethreitz/httpbin
+  backend4:
+    image: kennethreitz/httpbin
+  backend5:
+    image: kennethreitz/httpbin
